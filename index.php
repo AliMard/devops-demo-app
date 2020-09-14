@@ -15,13 +15,18 @@ else {
     $dbSuccess = true;
 }
 $sql = "SELECT version FROM dbversion ORDER BY id DESC LIMIT 1";
+$sql2 = "show databases";
+
 $result = $conn->query($sql);
+$res = $conn->query($sql2);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         $dbVersion = $row['version'];
     }
 }
+
+print_r($res);
 
 
 // Close Connection
