@@ -26,7 +26,12 @@ if ($result->num_rows > 0) {
     }
 }
 
-print_r($res);
+
+
+while($row = $res->fetch_assoc()) {
+           print_r($row);
+       
+    }
 
 
 // Close Connection
